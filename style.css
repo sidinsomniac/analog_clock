@@ -1,0 +1,41 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#pendulumClock{
+	height: 100vh;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	z-index: 1;
+}
+#secondhand,#minutehand,#hourhand{
+	transform-origin: 250px 166.8px;
+	transition:transform 0.1s cubic-bezier(1, 0.01, 0, 2.15);
+}
+#pendulum{
+	transform-origin: 250px 166.8px;
+	animation:sway 1s ease-in-out alternate infinite 0.4s;
+}
+#roomwall{
+	width:100vw;
+	z-index: 0;
+	height: 90vh;
+	position: absolute;
+	top: 0;
+	background: #FFC49B;
+
+}
+#roomfloor{
+	width:100vw;
+	z-index: -1;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	background: #FAEDC0;
+}
+@keyframes sway{
+	0%{ transform:rotate(4deg); }
+	100%{ transform:rotate(-4deg); }
+}
